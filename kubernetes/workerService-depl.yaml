@@ -1,0 +1,21 @@
+apiVersion:  version-first
+kind: Deployment
+metadata:
+  name: workerService
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workerService
+  template:
+    metadata:
+      labels:
+        app: workerService
+    spec:
+      containers:
+        -
+          image: "workerService:latest"
+          name: workerService
+          ports:
+            -
+              containerPort: 8083

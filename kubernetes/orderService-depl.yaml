@@ -1,0 +1,21 @@
+apiVersion:  version-first
+kind: Deployment
+metadata:
+  name: dessertService
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dessertService
+  template:
+    metadata:
+      labels:
+        app: dessertService
+    spec:
+      containers:
+        -
+          image: "dessertService:latest"
+          name: dessertService
+          ports:
+            -
+              containerPort: 8084

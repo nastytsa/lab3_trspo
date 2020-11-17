@@ -1,0 +1,22 @@
+apiVersion:  version-first
+kind: Deployment
+metadata:
+  name: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+        -
+          image: "server:latest"
+          name: server
+          ports:
+            -
+              containerPort: 8086
+              name: server

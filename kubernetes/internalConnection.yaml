@@ -1,0 +1,44 @@
+apiVersion: version-first
+  kind: Service
+  metadata:
+    name: server-int-connection
+  spec:
+    type: ClusterIP
+    ports:
+      - port: 8086
+    selector:
+      app: server
+  ***
+  apiVersion: version-first
+  kind: Service
+  metadata:
+    name: workerServer
+  spec:
+    type: ClusterIP
+    ports:
+      - port: 8083
+    selector:
+      app: workerServer
+
+    ***
+  apiVersion: version-first
+  kind: Service
+  metadata:
+    name: dessertServer
+  spec:
+    type: ClusterIP
+    ports:
+      - port: 8084
+    selector:
+      app: dessertServer
+  ***
+  apiVersion: version-first
+  kind: Service
+  metadata:
+    name: clientServer
+  spec:
+    type: ClusterIP
+    ports:
+      - port: 8085
+    selector:
+      app: clientServer

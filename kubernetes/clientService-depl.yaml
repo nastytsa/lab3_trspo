@@ -1,0 +1,21 @@
+apiVersion:  version-first
+kind: Deployment
+metadata:
+  name: clientService
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clientService
+  template:
+    metadata:
+      labels:
+        app: clientService
+    spec:
+      containers:
+        -
+          image: "clientService:latest"
+          name: clientService
+          ports:
+            -
+              containerPort: 8085
